@@ -3,20 +3,14 @@ pipeline {
     stages {
         stage ("Git Checkout") {
             steps {
-                git branch: "main", url: "https://github.com/pns99/santu-appnew.git"
+                git branch: "main", url: "https://github.com/nithi-dhanvi/santu.git"
                 }
             }
             stage ("Maven Build") {
                   steps {
-                      sh "/opt/maven/bin/mvn clean package -DskipTests=true"
+                      sh "/opt/apache-maven-3.6.3/bin/mvn clean package -DskipTests=true"
                   }
              }
-             stage ("Sonar Publish") {
-                    steps {
-                        withSonarQubeEnv("santusonar"){
-                        sh "/opt/maven/bin/mvn sonar:sonar"
-                    }
-              }
-        }
+             
     }
 }
