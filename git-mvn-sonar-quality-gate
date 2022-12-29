@@ -15,7 +15,7 @@ pipeline {
         
         stage ("Sonar Publish") {
               steps {
-                  withSonarQubeEnv(credentialsId: 'sonar-credentialsId', installationName: 'Sonar-token') {
+                  withSonarQubeEnv(credentialsId: 'sonar-token', installationName: 'sonar') {
                     
                       sh "/opt/apache-maven-3.6.3/bin/mvn sonar:sonar"
                   }
