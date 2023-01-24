@@ -25,5 +25,5 @@ pipeline {
     }
 }
 def UploadtoNexus() {
-     nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb-1.0.0-SNAPSHOT.war', type: 'war']], credentialsId: 'Nexus', groupId: 'in.javahome', nexusUrl: '192.168.0.22:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'mvn-project', version: '1.0.0-SNAPSHOT'
+     nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb-1.0.0-SNAPSHOT.war', type: 'war']], credentialsId: 'Nexus', groupId: 'in.javahome', nexusUrl: '192.168.0.21:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'mvn-project', version: '1.0.0-SNAPSHOT'
 }
